@@ -34,7 +34,7 @@ app.get('/', routes.index);
 app.get('/users', user.list);
 app.get('/hello', (req,res) => res.send('hello world'));
 
-app.get('/books', (req,res) => {
+app.get('/genres', (req,res) => {
   Genre.getGenres((err,genres) => {
 	  if(err) {
 		  throw err;
@@ -44,6 +44,10 @@ app.get('/books', (req,res) => {
 
 });
 
+app.get('/genres/:id',(req,res) => {
+	
+	
+});
 
 
 http.createServer(app).listen(app.get('port'), function(){
